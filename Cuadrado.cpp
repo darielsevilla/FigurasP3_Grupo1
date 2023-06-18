@@ -25,25 +25,29 @@ void Cuadrado::Dibujar() {
 	regex rulePerimetro(patternPerimetro);
 
 	string elemento_a = " " + to_string(a) + " ";
-	string elemento_area = "   " + to_string(area()) + "   ";
+	string elemento_area = " " + to_string(area()) + " ";
 	string elemento_perimetro = "  " + to_string(perimetro()) + "  ";
-	//agregas espacios a A
+	//agregar espacios a A
 	if (a > 9 && a < 100)
 		elemento_a += " ";
 	else if (a < 9)
 		elemento_a = " " + elemento_a + " ";
 
 	//agregar espacios a area
-	if (area() > 9 && area() < 100)
-		elemento_area += " ";
-	else if (area() < 9)
-		elemento_area += " ";
+	if (area() < 9)
+		elemento_area = "   " + elemento_area + "   ";
+	else if (area() > 9 && area() < 999)
+		elemento_area = "  " + elemento_area + "  ";
+	else if (area() >= 1000 && area() < 9999)
+		elemento_area = " " + elemento_area + "  ";
+	else if (area() > 9999)
+		elemento_area = " " + elemento_area + " ";
 
 	//agregar espacios a perimetro
 	if (perimetro() > 9 && perimetro() < 100)
 		elemento_perimetro += " ";
 	else if (perimetro() < 9)
-		elemento_perimetro += " ";
+		elemento_perimetro = " " + elemento_perimetro + " ";
 
 
 	fstream file("Cuadrado.txt", ios::in);
