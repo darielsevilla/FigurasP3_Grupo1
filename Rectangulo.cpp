@@ -86,7 +86,6 @@ void Rectangulo::Dibujar() {
 		elemento_area = elemento_area + " ";
 
 	//perimetro
-	//perimetro
 	if (perimetro_rect < 10)
 		elemento_perimetro = "   " + elemento_perimetro + "   ";
 	else if (perimetro_rect < 100)
