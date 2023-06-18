@@ -31,19 +31,19 @@ void Cuadrado::Dibujar() {
 	if (a > 9 && a < 100)
 		elemento_a += " ";
 	else if (a < 9)
-		elemento_a += "  ";
+		elemento_a = " " + elemento_a + " ";
 
 	//agregar espacios a area
 	if (area() > 9 && area() < 100)
 		elemento_area += " ";
 	else if (area() < 9)
-		elemento_area += "  ";
+		elemento_area += " ";
 
 	//agregar espacios a perimetro
 	if (perimetro() > 9 && perimetro() < 100)
 		elemento_perimetro += " ";
 	else if (perimetro() < 9)
-		elemento_perimetro += "  ";
+		elemento_perimetro += " ";
 
 
 	fstream file("Cuadrado.txt", ios::in);
