@@ -17,6 +17,11 @@ int Rectangulo::perimetro() {
 }
 
 void Rectangulo::Dibujar() {
+	SetConsoleCP(CP_UTF8);
+	SetConsoleOutputCP(CP_UTF8);
+	SetConsoleCP(1252);
+	SetConsoleOutputCP(1252);
+	setlocale(LC_ALL, "spanish");
 	//apostrophes
 	string apostrophePatterns = R"(\Ã­)";
 	string apostropheArea = R"(\Ã)";
@@ -109,14 +114,14 @@ void Rectangulo::Dibujar() {
 	fstream file("Rectangulo.txt", ios::in);
 	string linea;
 	while (getline(file,linea)) {
-		linea = regex_replace(linea, apostrophe_i, "í");
-		linea = regex_replace(linea, apostrophe_a, "Á");
+		
 		linea = regex_replace(linea, regex_a, elemento_a);
 		linea = regex_replace(linea, regex_b, elemento_b);
 		linea = regex_replace(linea, regex_area, elemento_area);
 		linea = regex_replace(linea, regex_perimetro, elemento_perimetro);
 		linea = regex_replace(linea, regex_suma_perimetro, elementoSumaPerimetro);
-
+		linea = regex_replace(linea, apostrophe_i, "í");
+		linea = regex_replace(linea, apostrophe_a, "Á");
 		cout << linea << "\n";
 	}
 	file.close();
