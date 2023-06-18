@@ -13,5 +13,8 @@ public:
 	virtual int area() = 0;
 	virtual int perimetro() = 0;
 	virtual void Dibujar() = 0;
+	string atributoEspaciado(string, int);
+	string areaParalelogramoEspaciada(string, int);
+	string perimetroParalelogramoEspaciado(string, int);
 };
 

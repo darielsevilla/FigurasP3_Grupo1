@@ -67,46 +67,11 @@ void Cometa::Dibujar() {
 	string elementoSumaArea = to_string(suma_area);
 	string elementoSumaPerimetro = to_string(suma_perimetro);
 	
+	elemento_a = atributoEspaciado(elemento_a, a);
+	elemento_b = atributoEspaciado(elemento_b, b);
+	elemento_d = atributoEspaciado(elemento_d, d);
+	elemento_D = atributoEspaciado(elemento_D, D);
 	//espaciado
-	//a
-	if (a < 10)
-		elemento_a = "  " + elemento_a + "  ";
-	else if (a < 100)
-		elemento_a = " " + elemento_a + "  ";
-	else if (a < 1000)
-		elemento_a = " " + elemento_a + " ";
-	else if (a < 10000)
-		elemento_a = elemento_a + " ";
-	
-	//b
-	if (b < 10)
-		elemento_b = "  " + elemento_b + "  ";
-	else if (b < 100)
-		elemento_b = " " + elemento_b + "  ";
-	else if (b < 1000)
-		elemento_b = " " + elemento_b + " ";
-	else if (b < 10000)
-		elemento_b = elemento_b + " ";
-
-	//d
-	if (d < 10)
-		elemento_d = "  " + elemento_d + "  ";
-	else if (d < 100)
-		elemento_d = " " + elemento_d + "  ";
-	else if (d < 1000)
-		elemento_d = " " + elemento_d + " ";
-	else if (d < 10000)
-		elemento_d = elemento_d + " ";
-
-	//D
-	if (D < 10)
-		elemento_D = "  " + elemento_D + "  ";
-	else if (D < 100)
-		elemento_D = " " + elemento_D + "  ";
-	else if (D < 1000)
-		elemento_D = " " + elemento_D + " ";
-	else if (D < 10000)
-		elemento_D = elemento_D + " ";
 
 	//area
 	if (area_cometa < 10)

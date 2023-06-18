@@ -54,50 +54,11 @@ void Rectangulo::Dibujar() {
 	string elemento_perimetro = to_string(perimetro_rect);
 	string elementoSumaPerimetro = to_string(suma_perimetro);
 	//Conteo de espacios
-	//a
-	if (a < 10)
-		elemento_a = "  " + elemento_a + "  ";
-	else if (a < 100)
-		elemento_a = " " + elemento_a + "  ";
-	else if (a < 1000)
-		elemento_a = " " + elemento_a + " ";
-	else if (a < 10000)
-		elemento_a = elemento_a + " ";
-
-	//b
-	if (b < 10)
-		elemento_b = "  " + elemento_b + "  ";
-	else if (b < 100)
-		elemento_b = " " + elemento_b + "  ";
-	else if (b < 1000)
-		elemento_b = " " + elemento_b + " ";
-	else if (b < 10000)
-		elemento_b = elemento_b + " ";
+	elemento_a = atributoEspaciado(elemento_a, a);
+	elemento_b = atributoEspaciado(elemento_b, b);
+	elemento_area = areaParalelogramoEspaciada(elemento_area, area_rect);
+	elemento_perimetro = perimetroParalelogramoEspaciado(elemento_perimetro, perimetro_rect);
 	
-
-	//area 
-	if (area_rect < 10)
-		elemento_area = "  " + elemento_area + "  ";
-	else if (area_rect < 100)
-		elemento_area = " " + elemento_area + "  ";
-	else if (area_rect < 1000)
-		elemento_area = " " + elemento_area + " ";
-	else if (area_rect < 10000)
-		elemento_area = elemento_area + " ";
-
-	//perimetro
-	if (perimetro_rect < 10)
-		elemento_perimetro = "   " + elemento_perimetro + "   ";
-	else if (perimetro_rect < 100)
-		elemento_perimetro = "  " + elemento_perimetro + "   ";
-	else if (perimetro_rect < 1000)
-		elemento_perimetro = "  " + elemento_perimetro + "  ";
-	else if (perimetro_rect < 10000)
-		elemento_perimetro = " " + elemento_perimetro + "  ";
-	else if (perimetro_rect < 100000)
-		elemento_perimetro = " " + elemento_perimetro + " ";
-	else if (perimetro_rect < 1000000)
-		elemento_perimetro = elemento_perimetro + " ";
 
 	//a+b
 	if (suma_perimetro < 10)

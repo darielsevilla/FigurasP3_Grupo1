@@ -32,14 +32,11 @@ void Cuadrado::Dibujar() {
 	regex rulePerimetro(patternPerimetro);
 	regex apostrophe(apostrophePatters);
 	regex apostrophe2(apostropheArea);
-	string elemento_a = " " + to_string(a) + " ";
+	string elemento_a = to_string(a);
 	string elemento_area = " " + to_string(area()) + " ";
 	string elemento_perimetro = "  " + to_string(perimetro()) + "  ";
 	//agregar espacios a A
-	if (a > 9 && a < 100)
-		elemento_a += " ";
-	else if (a < 9)
-		elemento_a = " " + elemento_a + " ";
+	elemento_a = atributoEspaciado(elemento_a, a);
 
 	//agregar espacios a area
 	if (area() < 9)

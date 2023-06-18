@@ -63,48 +63,12 @@ void Triangulo::Dibujar() {
 	string elemento_perimetro = to_string(perimetro_triangulo);
 	
 	//conteo de espacios
-	//a
-	if (a < 10)
-		elemento_a = "  " + elemento_a + "  ";
-	else if (a < 100)
-		elemento_a = " " + elemento_a + "  ";
-	else if (a < 1000)
-		elemento_a = " " + elemento_a + " ";
-	else if (a < 10000)
-		elemento_a = elemento_a + " ";
-
-	//b
-	if (b < 10)
-		elemento_b = "  " + elemento_b + "  ";
-	else if (b < 100)
-		elemento_b = " " + elemento_b + "  ";
-	else if (b < 1000)
-		elemento_b = " " + elemento_b + " ";
-	else if (b < 10000)
-		elemento_b = elemento_b + " ";
-
-
-	//c
-	if (c < 10)
-		elemento_c = "  " + elemento_c + "  ";
-	else if (c < 100)
-		elemento_c = " " + elemento_c + "  ";
-	else if (c < 1000)
-		elemento_c = " " + elemento_c + " ";
-	else if (c < 10000)
-		elemento_c= elemento_c + " ";
 	
-
-	//h
-	if (h < 10)
-		elemento_h = "  " + elemento_h + "  ";
-	else if (h < 100)
-		elemento_h = " " + elemento_h + "  ";
-	else if (h < 1000)
-		elemento_h = " " + elemento_h + " ";
-	else if (h < 10000)
-		elemento_h = elemento_h + " ";
-
+	elemento_a = atributoEspaciado(elemento_a, a);
+	elemento_b = atributoEspaciado(elemento_b, b);
+	elemento_c = atributoEspaciado(elemento_c, c);
+	elemento_h = atributoEspaciado(elemento_h, h);
+	
 	//area
 	if (area_triangulo < 10)
 		elemento_area = "   " + elemento_area + "   ";
