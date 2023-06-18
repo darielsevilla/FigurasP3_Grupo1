@@ -40,8 +40,19 @@ void impresion_figura(string opcion_seleccionada, int variables[]) {
 	delete figura;
 }
 void impresion_nula() {
-	
+	cout << "Uso: Figuras_Planas.exe ACCION [VARIABLES]" << endl
+		<< setw(5) << " " << "Calculos de perímetro y área de Figuras Planas." << endl << setw(5) << " " << "Donde: " << endl
+		<< setw(12) << " " << "ACCION:" << endl << setw(21) << " " << "ayuda" << setw(48) << "| Información sobre el uso del programa" << endl << endl 
+		<< setw(21) << " " << "triangulo" << setw(25) << "| VARIABLES: a b c h" << endl
+		<< setw(21) << " " << "paralelogramo" << setw(19) << "| VARIABLES: a b h" << endl
+		<< setw(21) << " " << "rectangulo" << setw(20) << "| VARIABLES: a b" << endl
+		<< setw(21) << " " << "cuadrado" << setw(20) << "| VARIABLES: a" << endl
+		<< setw(21) << " " << "rombo" << setw(27) << "| VARIABLES: a d D" << endl
+		<< setw(21) << " " << "cometa" << setw(28) << "| VARIABLES: a b d D" << endl
+		<< setw(21) << " " << "trapecio" << setw(28) << "| VARIABLES: a b c h B" << endl
+		<< setw(21) << " " << "circulo" << setw(21) << "| VARIABLES: r" << endl;
 }
+
 void accion(string opcion_seleccionada, char** variables, int numero_de_valores) {
 	int variables_de_formulas[5];
 	bool validacion_de_entrada = false;
