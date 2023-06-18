@@ -1,4 +1,4 @@
-#include "Funciones.h"
+﻿#include "Funciones.h"
 #include <locale.h>
 int main(int argc, char** argv)
 {

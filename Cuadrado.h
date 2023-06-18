@@ -1,5 +1,6 @@
 #pragma once
 #include "Figura.h"
+#include <windows.h>
 class Cuadrado : public Figura
 {
 private:
