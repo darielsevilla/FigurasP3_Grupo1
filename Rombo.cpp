@@ -43,21 +43,9 @@ void Rombo::Dibujar() {
 	string elemento_d = atributoEspaciado(to_string(d), d);
 	string elemento_D = atributoEspaciado(to_string(D), D);
 
-	string elemento_area;
+	string elemento_area = areaEspaciada(" " + to_string(area()) + " ", area());
 
-	if (area() < 9)
-		elemento_area = "  " + to_string(area()) + " ";
-	else if (area() > 9 && area() < 99)
-		elemento_area = "   " + to_string(area()) + "  ";
-	else if (area() > 99 && area() < 999)
-		elemento_area = "  " + to_string(area()) + "  ";
-	else if (area() > 999 && area() < 9999)
-		elemento_area = " " + to_string(area()) + "  ";
-	else if (area() > 9999 && area() < 99999)
-		elemento_area = " " + to_string(area()) + " ";
-
-	string elemento_perimetro = " " + to_string(perimetro()) + " ";
-	elemento_perimetro = perimetroParalelogramoEspaciado(to_string(perimetro()), perimetro());
+	string elemento_perimetro = perimetroEspaciado(to_string(perimetro()), perimetro());
 
 	int mult = (D * d);
 	string elemento_mult = to_string((D * d));

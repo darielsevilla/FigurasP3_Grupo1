@@ -61,8 +61,8 @@ void Paralelogramo::Dibujar() {
 	elemento_a = atributoEspaciado(elemento_a, a);
 	elemento_b = atributoEspaciado(elemento_b, b);
 	elemento_h = atributoEspaciado(elemento_h, h);
-	elemento_area = areaParalelogramoEspaciada(elemento_area, area_paralelograma);
-	elemento_perimetro = perimetroParalelogramoEspaciado(elemento_perimetro, perimetro_paralelograma);
+	elemento_area = areaEspaciada(elemento_area, area_paralelograma);
+	elemento_perimetro = perimetroEspaciado(elemento_perimetro, perimetro_paralelograma);
 
 	if (suma_perimetro < 10)
 		elementoSumaPerimetro = "  " + elementoSumaPerimetro + "  ";

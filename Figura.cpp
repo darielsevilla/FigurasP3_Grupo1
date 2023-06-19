@@ -17,7 +17,7 @@ string Figura::atributoEspaciado(string atributo, int valor) {
 	return atributo;
 }
 
-string Figura::areaParalelogramoEspaciada(string area_figura, int area) {
+string Figura::areaEspaciada(string area_figura, int area) {
 	if (area < 10)
 		area_figura = "  " + area_figura + "  ";
 	else if (area < 100)
@@ -30,7 +30,7 @@ string Figura::areaParalelogramoEspaciada(string area_figura, int area) {
 	return area_figura;
 }
 
-string Figura::perimetroParalelogramoEspaciado(string perimetro_figura, int perimetro) {
+string Figura::perimetroEspaciado(string perimetro_figura, int perimetro) {
 	if (perimetro < 10)
 		perimetro_figura = "   " + perimetro_figura + "   ";
 	else if (perimetro < 100)

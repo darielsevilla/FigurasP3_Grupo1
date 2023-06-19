@@ -56,8 +56,8 @@ void Rectangulo::Dibujar() {
 	//Conteo de espacios
 	elemento_a = atributoEspaciado(elemento_a, a);
 	elemento_b = atributoEspaciado(elemento_b, b);
-	elemento_area = areaParalelogramoEspaciada(elemento_area, area_rect);
-	elemento_perimetro = perimetroParalelogramoEspaciado(elemento_perimetro, perimetro_rect);
+	elemento_area = areaEspaciada(elemento_area, area_rect);
+	elemento_perimetro = perimetroEspaciado(elemento_perimetro, perimetro_rect);
 	
 
 	//a+b
