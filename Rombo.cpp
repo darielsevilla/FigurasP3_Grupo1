@@ -29,7 +29,7 @@ void Rombo::Dibujar() {
 	string pattern_d = R"(\{d{3}\})";
 	string pattern_D = R"(\{D{3}\})";
 	string pattern_perimetro = R"(\{4\*[a]{3}\})";
-	string pattern_mult = R"(\{D\*d\})";
+	string pattern_mult = R"(\[\{D\*dd\}\])";
 	string pattern_area = R"(\{D\*d\/[2]\})";
 
 	regex regex_a(pattern_a);
@@ -44,19 +44,27 @@ void Rombo::Dibujar() {
 	string elemento_D = atributoEspaciado(to_string(D), D);
 
 	string elemento_area = areaEspaciada(" " + to_string(area()) + " ", area());
+	if(area()>999999)
+		elemento_area = areaEspaciada(to_string(area()), area());
 
 	string elemento_perimetro = perimetroEspaciado(to_string(perimetro()), perimetro());
 
 	int mult = (D * d);
 	string elemento_mult = to_string((D * d));
 	if (mult < 9)
-		elemento_mult = "  " + elemento_mult + "  ";
+		elemento_mult = "   " + elemento_mult + "    ";
 	else if (mult > 9 && mult < 99)
-		elemento_mult = "  " + elemento_mult + " ";
+		elemento_mult = "   " + elemento_mult + "   ";
 	else if (mult > 99 && mult < 999)
-		elemento_mult = " " + elemento_mult + " ";
+		elemento_mult = " " + elemento_mult + "   ";
 	else if (mult > 999 && mult < 9999)
-		elemento_mult =  " " + elemento_mult;
+		elemento_mult =  "  " + elemento_mult + "  ";
+	else if(mult > 9999 && mult < 99999)
+		elemento_mult = " " + elemento_mult + "  ";
+	else if(mult > 99999 && mult < 999999)
+		elemento_mult = " " + elemento_mult + " ";
+	else if (mult > 999999 && mult < 9999999)
+		elemento_mult = elemento_mult + " ";
 
 	//tildes
 	string apostrophePatterns = R"(\í)";

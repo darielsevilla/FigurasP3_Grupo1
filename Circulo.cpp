@@ -36,8 +36,12 @@ void Circulo::Dibujar() {
 	//numeros
 	string elemento_r = atributoEspaciado(to_string(r), r);
 	string elemento_perimetro = perimetroEspaciado(" " + to_string(perimetro()) + " ", perimetro());
-	string elemento_prod = perimetroEspaciado(to_string(r*r), (r*r));
-	string elemento_area = perimetroEspaciado(" " + to_string(area()) + " ", area());
+	string elemento_prod = perimetroEspaciado(to_string(r * r), (r * r));
+	string elemento_area;
+	if (area() > 9999999)
+		elemento_area = perimetroEspaciado(to_string(area()) + " ", area());
+	else
+		elemento_area = perimetroEspaciado(" " + to_string(area()) + " ", area());
 
 	//caracteres especiales
 	string apostrophePatterns = R"(\Ã­)";
