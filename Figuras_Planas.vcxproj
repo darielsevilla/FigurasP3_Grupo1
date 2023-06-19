@@ -135,7 +135,7 @@
     <ClCompile Include="Paralelogramo.cpp" />
     <ClCompile Include="Rectangulo.cpp" />
     <ClCompile Include="Rombo.cpp" />
-    <ClCompile Include="Trapezio.cpp" />
+    <ClCompile Include="Trapecio.cpp" />
     <ClCompile Include="Triangulo.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -147,7 +147,7 @@
     <ClInclude Include="Paralelogramo.h" />
     <ClInclude Include="Rectangulo.h" />
     <ClInclude Include="Rombo.h" />
-    <ClInclude Include="Trapezio.h" />
+    <ClInclude Include="Trapecio.h" />
     <ClInclude Include="Triangulo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

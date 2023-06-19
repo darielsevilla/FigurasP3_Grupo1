@@ -13,7 +13,7 @@
 #include "Circulo.h"
 #include "Cometa.h"
 #include "Rombo.h"
-#include "Trapezio.h"
+#include "Trapecio.h"
 using namespace std;
 
 void impresion_figura(string opcion_seleccionada, int variables[]) {
@@ -30,8 +30,8 @@ void impresion_figura(string opcion_seleccionada, int variables[]) {
 		figura = new Rombo(variables[0], variables[1], variables[2]);
 	else if (opcion_seleccionada == "cometa")
 		figura = new Cometa(variables[0], variables[1], variables[2], variables[3]);
-	else if (opcion_seleccionada == "trapezio")
-		figura = new Trapezio(variables[0], variables[1], variables[2], variables[3], variables[4]);
+	else if (opcion_seleccionada == "trapecio")
+		figura = new Trapecio(variables[0], variables[1], variables[2], variables[3], variables[4]);
 	else
 		figura = new Paralelogramo(variables[0], variables[1], variables[2]);
 
