@@ -1,9 +1,9 @@
                                                                                                                                
-                               Perímetros y áreas de figuras planas                                                          
+                               Perímetros y Áreas de figuras planas                                                          
                                                                                                                              
                       Figura                             Perímetro                 Área                                      
 +------------------------------------------------------------------------------------------------+                           
-|                   Triángulo                    |                    Fórmulas                   |                           
+|                   Triángulo                    |                    Formulas                   |                           
 |------------------------------------------------|-----------------------------------------------|                           
 |                       -                        |                       |                       |                           
 |                      /|\                       |                       |                       |                           
