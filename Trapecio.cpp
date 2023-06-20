@@ -57,9 +57,13 @@ void Trapecio::Dibujar() {
 	string elemento_perimetro = perimetroEspaciado(" " + to_string(perimetro()) + " ", perimetro());
 	int prod = ((B + b) * h);
 	string elemento_prod = perimetroEspaciado(to_string(prod), prod);
-	string elemento_area = areaEspaciada("   " + to_string(area()) + " ", area());
-	if (area() > 999999) 
-		elemento_area = areaEspaciada(" " + to_string(area()) + " ", area());
+	string elemento_area = areaEspaciada(" " + to_string(area()) + " ", area());
+	if (area() > 99999 && area() < 999999) 
+		elemento_area = areaEspaciada(" " + to_string(area()) + "  ", area());
+
+	/*string elemento_area = areaEspaciada(to_string(area()), area());
+	if (area() > 99999 && area() < 999999)
+		elemento_area = areaEspaciada(to_string(area()) + " ", area());*/
 
 	fstream file("Trapecio.txt", ios::in);
 	string line;

@@ -100,13 +100,18 @@ void Triangulo::Dibujar() {
 
 	//b*h
 	if (multiplicacion_area < 10)
-		elemento_multiplicacion_area = "  " + elemento_multiplicacion_area + "  ";
+		elemento_multiplicacion_area = "   " + elemento_multiplicacion_area + "   ";
 	else if (multiplicacion_area < 100)
-		elemento_multiplicacion_area = " " + elemento_multiplicacion_area + "  ";
+		elemento_multiplicacion_area = "  " + elemento_multiplicacion_area + "   ";
 	else if (multiplicacion_area < 1000)
-		elemento_multiplicacion_area = " " + elemento_multiplicacion_area + " ";
+		elemento_multiplicacion_area = "  " + elemento_multiplicacion_area + "  ";
 	else if (multiplicacion_area < 10000)
+		elemento_multiplicacion_area = "  " + elemento_multiplicacion_area + " ";
+	else if (multiplicacion_area < 100000)
+		elemento_multiplicacion_area = " " + elemento_multiplicacion_area + " ";
+	else if (multiplicacion_area < 1000000)
 		elemento_multiplicacion_area = elemento_multiplicacion_area + " ";
+	
 
 	//impresion de archivo
 	fstream file("Triangulo.txt", ios::in);

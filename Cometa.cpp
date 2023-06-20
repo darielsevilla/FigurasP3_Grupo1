@@ -38,9 +38,9 @@ void Cometa::Dibujar() {
 	string patron_d = R"(\{d{3}\})";
 	string patron_D = R"(\{D{3}\})";
 	string patron_perimetro = R"(\{2\*a\+b\})";
-	string patron_area = R"(\{D\+d\/2\})";
-	string patron_suma_area = R"(\{a\+b\})";
-	string patron_suma_perimetro = R"(\{D\*d\})";
+	string patron_area = R"(\{D\*d\/2\})";
+	string patron_suma_perimetro = R"(\{a\+b\})";
+	string patron_multiplicacion_area = R"(\{DD\*dd\})";
 
 	regex regex_a{ patron_a };
 	regex regex_b{ patron_b };
@@ -48,8 +48,8 @@ void Cometa::Dibujar() {
 	regex regex_D{ patron_D };
 	regex regex_area{ patron_area };
 	regex regex_perimetro{ patron_perimetro };
-	regex regex_suma_area{ patron_suma_area };
-	regex regex_suma_perimetro{ patron_suma_perimetro };
+	regex regex_suma_area{ patron_suma_perimetro };
+	regex regex_suma_perimetro{ patron_multiplicacion_area };
 
 	//strings de los elementos del cometa
 	string elemento_a = to_string(a);
@@ -59,13 +59,13 @@ void Cometa::Dibujar() {
 	//string de area y perimetro
 	int area_cometa = area();
 	int perimetro_cometa = perimetro();
-	int suma_area = a + b;
-	int suma_perimetro = d * D;
+	int suma_perimeter = a + b;
+	int mult_area = d * D;
 
 	string elementoArea = to_string(area_cometa);
 	string elementoPerimetro = to_string(perimetro_cometa);
-	string elementoSumaArea = to_string(suma_area);
-	string elementoSumaPerimetro = to_string(suma_perimetro);
+	string elementoSumaPerimeter = to_string(suma_perimeter);
+	string elementoMultPerimetro = to_string(mult_area);
 	
 	elemento_a = atributoEspaciado(elemento_a, a);
 	elemento_b = atributoEspaciado(elemento_b, b);
@@ -102,24 +102,31 @@ void Cometa::Dibujar() {
 		elementoPerimetro = elementoPerimetro + " ";
 
 	//reemplazo de las sumas de en medio
-	if (suma_area < 10)
-		elementoSumaArea = "  " + elementoSumaArea + "  ";
-	else if (suma_area < 100)
-		elementoSumaArea = " " + elementoSumaArea + "  ";
-	else if (suma_area < 1000)
-		elementoSumaArea = " " + elementoSumaArea + " ";
-	else if (suma_area < 10000)
-		elementoSumaArea = elementoSumaArea + " ";
+	if (suma_perimeter < 10)
+		elementoSumaPerimeter = "  " + elementoSumaPerimeter + "  ";
+	else if (suma_perimeter < 100)
+		elementoSumaPerimeter = " " + elementoSumaPerimeter + "  ";
+	else if (suma_perimeter < 1000)
+		elementoSumaPerimeter = " " + elementoSumaPerimeter + " ";
+	else if (suma_perimeter < 10000)
+		elementoSumaPerimeter = elementoSumaPerimeter + " ";
 
 
-	if (suma_perimetro < 10)
-		elementoSumaPerimetro = "  " + elementoSumaPerimetro + "  ";
-	else if (suma_perimetro < 100)
-		elementoSumaPerimetro = " " + elementoSumaPerimetro + "  ";
-	else if (suma_perimetro < 1000)
-		elementoSumaPerimetro = " " + elementoSumaPerimetro + " ";
-	else if (suma_perimetro < 10000)
-		elementoSumaPerimetro = elementoSumaPerimetro + " ";
+	if (mult_area < 10)
+		elementoMultPerimetro = "  " + elementoMultPerimetro + "    ";
+	else if (mult_area < 100)
+		elementoMultPerimetro = "  " + elementoMultPerimetro + "   ";
+	else if (mult_area < 1000)
+		elementoMultPerimetro = "  " + elementoMultPerimetro + "  ";
+	else if (mult_area < 10000)
+		elementoMultPerimetro = elementoMultPerimetro + "   ";
+	else if (mult_area < 100000)
+		elementoMultPerimetro = elementoMultPerimetro + "  ";
+	else if(mult_area < 1000000)
+		elementoMultPerimetro = elementoMultPerimetro + " ";
+	else if(mult_area < 1000000)
+		elementoMultPerimetro = elementoMultPerimetro;
+
 	//impresion de figura
 	fstream file("Cometa.txt", ios::in);
 	string linea;
@@ -134,8 +141,8 @@ void Cometa::Dibujar() {
 			linea = regex_replace(linea, apostrophe_i, "í");
 			linea = regex_replace(linea, apostrophe_a, "Á");
 			
-			linea = regex_replace(linea, regex_suma_area, elementoSumaArea);
-			linea = regex_replace(linea, regex_suma_perimetro, elementoSumaPerimetro);
+			linea = regex_replace(linea, regex_suma_area, elementoSumaPerimeter);
+			linea = regex_replace(linea, regex_suma_perimetro, elementoMultPerimetro);
 			cout << linea << "\n";
 		}
 	}

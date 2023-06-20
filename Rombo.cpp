@@ -43,9 +43,9 @@ void Rombo::Dibujar() {
 	string elemento_d = atributoEspaciado(to_string(d), d);
 	string elemento_D = atributoEspaciado(to_string(D), D);
 
-	string elemento_area = areaEspaciada(" " + to_string(area()) + " ", area());
-	if(area()>999999)
-		elemento_area = areaEspaciada(to_string(area()), area());
+	string elemento_area = areaEspaciada(to_string(area()), area());
+	if(area()>99999 && area() < 999999)
+		elemento_area = areaEspaciada(to_string(area()) + " ", area()); 
 
 	string elemento_perimetro = perimetroEspaciado(to_string(perimetro()), perimetro());
 
@@ -56,7 +56,7 @@ void Rombo::Dibujar() {
 	else if (mult > 9 && mult < 99)
 		elemento_mult = "   " + elemento_mult + "   ";
 	else if (mult > 99 && mult < 999)
-		elemento_mult = " " + elemento_mult + "   ";
+		elemento_mult = "  " + elemento_mult + "   ";
 	else if (mult > 999 && mult < 9999)
 		elemento_mult =  "  " + elemento_mult + "  ";
 	else if(mult > 9999 && mult < 99999)

@@ -57,6 +57,9 @@ void Circulo::Dibujar() {
 	string line;
 	if (file) {
 		while (getline(file, line)) {
+			line = regex_replace(line, apostrophe_i, "í");
+			line = regex_replace(line, apostrophe_a, "Á");
+
 			if (regex_search(line, pi)) {
 				SetConsoleCP(1253);
 				SetConsoleOutputCP(1253);
@@ -64,13 +67,10 @@ void Circulo::Dibujar() {
 				line = regex_replace(line, pi, "\xcf\x80");
 			}
 
-
 			line = regex_replace(line, regex_perimetro, elemento_perimetro);
 			line = regex_replace(line, regex_r, elemento_r);
 			line = regex_replace(line, regex_prod, elemento_prod);
 			line = regex_replace(line, regex_area, elemento_area);
-			line = regex_replace(line, apostrophe_i, "í");
-			line = regex_replace(line, apostrophe_a, "Á");
 			cout << line << endl;
 		}
 

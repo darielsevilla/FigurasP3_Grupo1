@@ -65,6 +65,11 @@ void Paralelogramo::Dibujar() {
 	elemento_area = areaEspaciada(elemento_area, area_paralelograma);
 	elemento_perimetro = perimetroEspaciado(elemento_perimetro, perimetro_paralelograma);
 
+	if (area() > 99999 && area() < 999999)
+		elemento_area += " ";
+	else if (area() > 999999 && area() < 9999999)
+		elemento_area = " " + elemento_area + " ";
+
 	if (suma_perimetro < 10)
 		elementoSumaPerimetro = "  " + elementoSumaPerimetro + "  ";
 	else if (suma_perimetro < 100)

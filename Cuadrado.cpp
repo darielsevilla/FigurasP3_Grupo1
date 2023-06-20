@@ -41,12 +41,16 @@ void Cuadrado::Dibujar() {
 	//agregar espacios a area
 	if (area() < 9)
 		elemento_area = "   " + elemento_area + "   ";
-	else if (area() > 9 && area() < 999)
+	else if (area() > 9 && area() < 99)
+		elemento_area = "  " + elemento_area + "   ";
+	else if (area() > 99 && area() < 999)
 		elemento_area = "  " + elemento_area + "  ";
 	else if (area() >= 1000 && area() < 9999)
 		elemento_area = " " + elemento_area + "  ";
-	else if (area() > 9999)
-		elemento_area =  elemento_area + " ";
+	else if (area() > 9999 && area() < 99999)
+		elemento_area = " " + elemento_area + " ";
+	else if (area() > 99999 && area() < 999999)
+		elemento_area += " ";
 
 	//agregar espacios a perimetro
 	if (perimetro() > 9 && perimetro() < 100)
