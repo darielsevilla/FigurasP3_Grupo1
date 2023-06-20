@@ -50,23 +50,12 @@ void Circulo::Dibujar() {
 	regex apostrophe_i{ apostrophePatterns };
 	regex apostrophe_a{ apostropheArea };
 
-	string piPattern = R"(Ï€)";
-	regex pi{ piPattern };
-
 	fstream file("Circulo.txt", ios::in);
 	string line;
 	if (file) {
 		while (getline(file, line)) {
 			line = regex_replace(line, apostrophe_i, "í");
 			line = regex_replace(line, apostrophe_a, "Á");
-
-			if (regex_search(line, pi)) {
-				SetConsoleCP(1253);
-				SetConsoleOutputCP(1253);
-				setlocale(LC_ALL, "en_US.utf8");
-				line = regex_replace(line, pi, "\xcf\x80");
-			}
-
 			line = regex_replace(line, regex_perimetro, elemento_perimetro);
 			line = regex_replace(line, regex_r, elemento_r);
 			line = regex_replace(line, regex_prod, elemento_prod);
