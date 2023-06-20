@@ -26,15 +26,16 @@ void Paralelogramo::Dibujar() {
 	//apostrophes
 	string apostrophePatterns = R"(\Ã­)";
 	string apostropheArea = R"(\Ã)";
+	string apostropheFigura = R"(Á¡)";
 
 	regex apostrophe_i{ apostrophePatterns };
 	regex apostrophe_a{ apostropheArea };
-
+	regex apostrophe_figura{ apostropheFigura };
 	//string patrones y regexes
 	string pattern_a = R"(\{a{3}\})";
 	string pattern_b = R"(\{b{3}\})";
 	string pattern_h = R"(\{h{3}\})";
-	string pattern_area = R"(\{b\*h\})";
+	string pattern_area = R"(\[\{b\*h\}\])";
 	string pattern_perimetro = R"(\{2\*a\+b\})";
 	string pattern_suma_perimetro = R"(\{a\+b\})";
 
@@ -86,6 +87,7 @@ void Paralelogramo::Dibujar() {
 			linea = regex_replace(linea, regex_suma_perimetro, elementoSumaPerimetro);
 			linea = regex_replace(linea, apostrophe_i, "í");
 			linea = regex_replace(linea, apostrophe_a, "Á");
+			linea = regex_replace(linea, apostrophe_figura, "á");
 			cout << linea << "\n";
 		}
 	}

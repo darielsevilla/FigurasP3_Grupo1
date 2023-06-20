@@ -25,15 +25,16 @@ void Rectangulo::Dibujar() {
 	//apostrophes
 	string apostrophePatterns = R"(\Ã­)";
 	string apostropheArea = R"(\Ã)";
+	string apostropheFigura = R"(Á¡)";
 
 	regex apostrophe_i{ apostrophePatterns };
 	regex apostrophe_a{ apostropheArea };
-
+	regex apostrophe_figura{ apostropheFigura };
 
 	//regexes de variables
 	string pattern_a = R"(\{a{3}\})";
 	string pattern_b = R"(\{b{3}\})";
-	string pattern_area = R"(\{a\*b\})";
+	string pattern_area = R"(\[\{a\*b\}\])";
 	string pattern_perimetro = R"(\{2\*a\+b\})";
 	string pattern_suma_perimetro = R"(\{a\+b\})";
 
@@ -82,6 +83,7 @@ void Rectangulo::Dibujar() {
 		linea = regex_replace(linea, regex_suma_perimetro, elementoSumaPerimetro);
 		linea = regex_replace(linea, apostrophe_i, "í");
 		linea = regex_replace(linea, apostrophe_a, "Á");
+		linea = regex_replace(linea, apostrophe_figura, "á");
 		cout << linea << "\n";
 	}
 	file.close();

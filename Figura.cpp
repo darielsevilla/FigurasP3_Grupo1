@@ -19,14 +19,17 @@ string Figura::atributoEspaciado(string atributo, int valor) {
 
 string Figura::areaEspaciada(string area_figura, int area) {
 	if (area < 10)
-		area_figura = "  " + area_figura + "  ";
+		area_figura = "   " + area_figura + "   ";
 	else if (area < 100)
-		area_figura = " " + area_figura + "  ";
+		area_figura = "  " + area_figura + "   ";
 	else if (area < 1000)
-		area_figura = " " + area_figura + " ";
+		area_figura = "  " + area_figura + "  ";
 	else if (area < 10000)
-		area_figura = area_figura + " ";
-
+		area_figura = " " +  area_figura + "  ";
+	else if (area < 100000)
+		area_figura = " " + area_figura + " ";
+	else if (area < 100000)
+		area_figura =  area_figura + " ";
 	return area_figura;
 }
 

@@ -27,16 +27,17 @@ void Triangulo::Dibujar() {
 	//apostrophes
 	string apostrophePatterns = R"(\Ã­)";
 	string apostropheArea = R"(\Ã)";
+	string apostropheFigura = R"(Á¡)";
 
 	regex apostrophe_i{ apostrophePatterns };
 	regex apostrophe_a{ apostropheArea };
-
+	regex apostrophe_figura{ apostropheFigura };
 	//string patrones y regexes
 	string pattern_a = R"(\{a{3}\})";
 	string pattern_b = R"(\{b{3}\})";
 	string pattern_c = R"(\{c{3}\})";
 	string pattern_h = R"(\{h{3}\})";
-	string pattern_multiplicacion_area = R"(\{b\*h\})";
+	string pattern_multiplicacion_area = R"(\[\{b\*h\}\])";
 	string pattern_area = R"(\{b\*h\/2\})";
 	string pattern_perimeter = R"(\{a\+b\+c\})";
 
@@ -120,6 +121,8 @@ void Triangulo::Dibujar() {
 		linea = regex_replace(linea, regex_multiplicacion_area, elemento_multiplicacion_area);
 		linea = regex_replace(linea, apostrophe_i, "í");
 		linea = regex_replace(linea, apostrophe_a, "Á");
+		linea = regex_replace(linea, apostrophe_figura, "á");
+
 		cout << linea << "\n";
 
 	}
