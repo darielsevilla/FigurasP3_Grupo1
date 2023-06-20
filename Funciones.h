@@ -35,8 +35,14 @@ void impresion_figura(string opcion_seleccionada, int variables[]) {
 	else
 		figura = new Paralelogramo(variables[0], variables[1], variables[2]);
 
-	
-	figura->Dibujar();
+	try {
+		if (figura->area() >= 10000000 || figura->perimetro() > 10000000)
+			throw 69;
+		figura->Dibujar();
+	}
+	catch (int a) {
+		cout << "*resultados muy grandes*\n";
+	}
 	delete figura;
 }
 void impresion_nula() {
